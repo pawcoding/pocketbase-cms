@@ -1,3 +1,8 @@
+> [!NOTE]
+> This is a fork of [pocketbase/pocketbase](https://github.com/pocketbase/pocketbase) that implements [#3421](https://github.com/pocketbase/pocketbase/issues/3421).
+>
+> The idea is to differentiate between "Superadmins" (can do everything a PocketBase admin can do) and "Editors" (can only modify content of collestions, no settings related to the tables and the system).
+
 <p align="center">
     <a href="https://pocketbase.io" target="_blank" rel="noopener">
         <img src="https://i.imgur.com/5qimnm5.png" alt="PocketBase - open source backend in 1 file" />
