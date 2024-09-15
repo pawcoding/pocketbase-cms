@@ -23,12 +23,12 @@ func bindBackupApi(app core.App, rg *echo.Group) {
 	api := backupApi{app: app}
 
 	subGroup := rg.Group("/backups", ActivityLogger(app))
-	subGroup.GET("", api.list, RequireAdminAuth())
-	subGroup.POST("", api.create, RequireAdminAuth())
-	subGroup.POST("/upload", api.upload, RequireAdminAuth())
+	subGroup.GET("", api.list, RequireSuperAdminAuth())
+	subGroup.POST("", api.create, RequireSuperAdminAuth())
+	subGroup.POST("/upload", api.upload, RequireSuperAdminAuth())
 	subGroup.GET("/:key", api.download)
-	subGroup.DELETE("/:key", api.delete, RequireAdminAuth())
-	subGroup.POST("/:key/restore", api.restore, RequireAdminAuth())
+	subGroup.DELETE("/:key", api.delete, RequireSuperAdminAuth())
+	subGroup.POST("/:key/restore", api.restore, RequireSuperAdminAuth())
 }
 
 type backupApi struct {

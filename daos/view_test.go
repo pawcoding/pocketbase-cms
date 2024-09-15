@@ -138,7 +138,7 @@ func TestSaveView(t *testing.T) {
 			[]string{
 				"id", "created", "updated",
 				"passwordHash", "tokenKey", "email",
-				"lastResetSentAt", "avatar", "c",
+				"lastResetSentAt", "avatar", "c", "superAdmin",
 			},
 		},
 		{

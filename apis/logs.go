@@ -14,7 +14,7 @@ import (
 func bindLogsApi(app core.App, rg *echo.Group) {
 	api := logsApi{app: app}
 
-	subGroup := rg.Group("/logs", RequireAdminAuth())
+	subGroup := rg.Group("/logs", RequireSuperAdminAuth())
 	subGroup.GET("", api.list)
 	subGroup.GET("/stats", api.stats)
 	subGroup.GET("/:id", api.view)

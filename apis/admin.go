@@ -21,11 +21,11 @@ func bindAdminApi(app core.App, rg *echo.Group) {
 	subGroup.POST("/request-password-reset", api.requestPasswordReset)
 	subGroup.POST("/confirm-password-reset", api.confirmPasswordReset)
 	subGroup.POST("/auth-refresh", api.authRefresh, RequireAdminAuth())
-	subGroup.GET("", api.list, RequireAdminAuth())
+	subGroup.GET("", api.list, RequireSuperAdminAuth())
 	subGroup.POST("", api.create, RequireAdminAuthOnlyIfAny(app))
-	subGroup.GET("/:id", api.view, RequireAdminAuth())
-	subGroup.PATCH("/:id", api.update, RequireAdminAuth())
-	subGroup.DELETE("/:id", api.delete, RequireAdminAuth())
+	subGroup.GET("/:id", api.view, RequireOwnerAdminAuth())
+	subGroup.PATCH("/:id", api.update, RequireOwnerAdminAuth())
+	subGroup.DELETE("/:id", api.delete, RequireOwnerAdminAuth())
 }
 
 type adminApi struct {
@@ -246,6 +246,16 @@ func (api *adminApi) create(c echo.Context) error {
 	// load request
 	if err := c.Bind(form); err != nil {
 		return NewBadRequestError("Failed to load the submitted data due to invalid formatting.", err)
+	}
+
+	totalAdmins, err := api.app.Dao().TotalAdmins()
+	if err != nil {
+		return NewApiError(500, "Failed to count admins.", err)
+	}
+
+	if totalAdmins == 0 {
+		form.SuperAdmin = true
+		admin.SuperAdmin = true
 	}
 
 	event := new(core.AdminCreateEvent)

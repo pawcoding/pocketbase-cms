@@ -7,6 +7,7 @@ import (
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase/core"
 	"github.com/pocketbase/pocketbase/forms"
+	"github.com/pocketbase/pocketbase/models"
 	"github.com/pocketbase/pocketbase/models/settings"
 )
 
@@ -14,12 +15,12 @@ import (
 func bindSettingsApi(app core.App, rg *echo.Group) {
 	api := settingsApi{app: app}
 
-	subGroup := rg.Group("/settings", ActivityLogger(app), RequireAdminAuth())
-	subGroup.GET("", api.list)
-	subGroup.PATCH("", api.set)
-	subGroup.POST("/test/s3", api.testS3)
-	subGroup.POST("/test/email", api.testEmail)
-	subGroup.POST("/apple/generate-client-secret", api.generateAppleClientSecret)
+	subGroup := rg.Group("/settings", ActivityLogger(app))
+	subGroup.GET("", api.list, RequireAdminAuth())
+	subGroup.PATCH("", api.set, RequireSuperAdminAuth())
+	subGroup.POST("/test/s3", api.testS3, RequireSuperAdminAuth())
+	subGroup.POST("/test/email", api.testEmail, RequireSuperAdminAuth())
+	subGroup.POST("/apple/generate-client-secret", api.generateAppleClientSecret, RequireSuperAdminAuth())
 }
 
 type settingsApi struct {
@@ -27,7 +28,22 @@ type settingsApi struct {
 }
 
 func (api *settingsApi) list(c echo.Context) error {
-	settings, err := api.app.Settings().RedactClone()
+	rawSettings := api.app.Settings()
+
+	admin, _ := c.Get(ContextAdminKey).(*models.Admin)
+	if admin == nil {
+		return NewUnauthorizedError("The request requires valid admin authorization token to be set.", nil)
+	}
+
+	var settings *settings.Settings
+	var err error
+	if admin.SuperAdmin {
+		settings, err = rawSettings.RedactClone()
+	} else {
+		settings, err = rawSettings.PublicClone()
+	}
+
+
 	if err != nil {
 		return NewBadRequestError("", err)
 	}

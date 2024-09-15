@@ -626,6 +626,7 @@ func apisBinds(vm *goja.Runtime) {
 	obj.Set("requireGuestOnly", apis.RequireGuestOnly)
 	obj.Set("requireRecordAuth", apis.RequireRecordAuth)
 	obj.Set("requireAdminAuth", apis.RequireAdminAuth)
+	obj.Set("requireSuperAdminAuth", apis.RequireSuperAdminAuth)
 	obj.Set("requireAdminAuthOnlyIfAny", apis.RequireAdminAuthOnlyIfAny)
 	obj.Set("requireAdminOrRecordAuth", apis.RequireAdminOrRecordAuth)
 	obj.Set("requireAdminOrOwnerAuth", apis.RequireAdminOrOwnerAuth)

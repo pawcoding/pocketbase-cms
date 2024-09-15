@@ -20,6 +20,7 @@ type AdminUpsert struct {
 	Email           string `form:"email" json:"email"`
 	Password        string `form:"password" json:"password"`
 	PasswordConfirm string `form:"passwordConfirm" json:"passwordConfirm"`
+	SuperAdmin      bool   `form:"superAdmin" json:"superAdmin"`
 }
 
 // NewAdminUpsert creates a new [AdminUpsert] form with initializer
@@ -39,6 +40,7 @@ func NewAdminUpsert(app core.App, admin *models.Admin) *AdminUpsert {
 	form.Id = admin.Id
 	form.Avatar = admin.Avatar
 	form.Email = admin.Email
+	form.SuperAdmin = admin.SuperAdmin
 
 	return form
 }
@@ -112,6 +114,7 @@ func (form *AdminUpsert) Submit(interceptors ...InterceptorFunc[*models.Admin]) 
 
 	form.admin.Avatar = form.Avatar
 	form.admin.Email = form.Email
+	form.admin.SuperAdmin = form.SuperAdmin
 
 	if form.Password != "" {
 		form.admin.SetPassword(form.Password)

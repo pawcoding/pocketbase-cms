@@ -333,6 +333,18 @@ func (s *Settings) RedactClone() (*Settings, error) {
 	return clone, nil
 }
 
+func (s *Settings) PublicClone() (*Settings, error) {
+	meta := MetaConfig{
+		AppName: s.Meta.AppName,
+		AppUrl: s.Meta.AppUrl,
+	}
+	settings := &Settings{
+		Meta: meta,
+	}
+
+	return settings, nil
+}
+
 // NamedAuthProviderConfigs returns a map with all registered OAuth2
 // provider configurations (indexed by their name identifier).
 func (s *Settings) NamedAuthProviderConfigs() map[string]AuthProviderConfig {

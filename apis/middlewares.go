@@ -124,6 +124,46 @@ func RequireAdminAuth() echo.MiddlewareFunc {
 	}
 }
 
+// RequireSuperAdminAuth middleware requires a request to have
+// a valid admin Authorization header with super admin permissions.
+func RequireSuperAdminAuth() echo.MiddlewareFunc {
+	return func(next echo.HandlerFunc) echo.HandlerFunc {
+		return func(c echo.Context) error {
+			admin, _ := c.Get(ContextAdminKey).(*models.Admin)
+			if admin == nil {
+				return NewUnauthorizedError("The request requires valid admin authorization token to be set.", nil)
+			}
+
+			if !admin.SuperAdmin {
+				return NewForbiddenError("The request requires super admin permissions.", nil)
+			}
+
+			return next(c)
+		}
+	}
+}
+
+// RequireOwnerAdminAuth middleware requires a request to have
+// a valid admin Authorization header with super admin permissions
+// or the admin id is the same as the request id.
+func RequireOwnerAdminAuth() echo.MiddlewareFunc {
+	return func(next echo.HandlerFunc) echo.HandlerFunc {
+		return func(c echo.Context) error {
+			admin, _ := c.Get(ContextAdminKey).(*models.Admin)
+			if admin == nil {
+				return NewUnauthorizedError("The request requires valid admin authorization token to be set.", nil)
+			}
+
+			requestId := c.PathParam("id")
+			if !admin.SuperAdmin && admin.Id != requestId {
+				return NewForbiddenError("The request requires super admin permissions.", nil)
+			}
+
+			return next(c)
+		}
+	}
+}
+
 // RequireAdminAuthOnlyIfAny middleware requires a request to have
 // a valid admin Authorization header ONLY if the application has
 // at least 1 existing Admin model.
@@ -131,13 +171,13 @@ func RequireAdminAuthOnlyIfAny(app core.App) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
 			admin, _ := c.Get(ContextAdminKey).(*models.Admin)
-			if admin != nil {
+			if admin != nil && admin.SuperAdmin {
 				return next(c)
 			}
 
 			totalAdmins, err := app.Dao().TotalAdmins()
 			if err != nil {
-				return NewBadRequestError("Failed to fetch admins info.", err)
+				return NewApiError(500, "Failed to fetch admins info.", err)
 			}
 
 			if totalAdmins == 0 {
