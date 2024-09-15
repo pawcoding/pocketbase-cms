@@ -8,14 +8,14 @@ import (
 	"testing"
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
-	"github.com/pocketbase/pocketbase/daos"
-	"github.com/pocketbase/pocketbase/forms/validators"
-	"github.com/pocketbase/pocketbase/models"
-	"github.com/pocketbase/pocketbase/models/schema"
-	"github.com/pocketbase/pocketbase/tests"
-	"github.com/pocketbase/pocketbase/tools/filesystem"
-	"github.com/pocketbase/pocketbase/tools/rest"
-	"github.com/pocketbase/pocketbase/tools/types"
+	"github.com/pawcoding/pocketbase-crm/daos"
+	"github.com/pawcoding/pocketbase-crm/forms/validators"
+	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pawcoding/pocketbase-crm/models/schema"
+	"github.com/pawcoding/pocketbase-crm/tests"
+	"github.com/pawcoding/pocketbase-crm/tools/filesystem"
+	"github.com/pawcoding/pocketbase-crm/tools/rest"
+	"github.com/pawcoding/pocketbase-crm/tools/types"
 )
 
 type testDataFieldScenario struct {

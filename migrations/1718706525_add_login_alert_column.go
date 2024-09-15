@@ -4,10 +4,10 @@ import (
 	"slices"
 
 	"github.com/pocketbase/dbx"
-	"github.com/pocketbase/pocketbase/daos"
-	"github.com/pocketbase/pocketbase/models"
-	"github.com/pocketbase/pocketbase/models/schema"
-	"github.com/pocketbase/pocketbase/tools/security"
+	"github.com/pawcoding/pocketbase-crm/daos"
+	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pawcoding/pocketbase-crm/models/schema"
+	"github.com/pawcoding/pocketbase-crm/tools/security"
 )
 
 // adds a "lastLoginAlertSentAt" column to all auth collection tables (if not already)

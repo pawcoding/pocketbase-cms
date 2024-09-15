@@ -9,13 +9,13 @@ import (
 
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/dbx"
-	"github.com/pocketbase/pocketbase/apis"
-	"github.com/pocketbase/pocketbase/core"
-	"github.com/pocketbase/pocketbase/daos"
-	"github.com/pocketbase/pocketbase/models"
-	"github.com/pocketbase/pocketbase/tests"
-	"github.com/pocketbase/pocketbase/tools/hook"
-	"github.com/pocketbase/pocketbase/tools/subscriptions"
+	"github.com/pawcoding/pocketbase-crm/apis"
+	"github.com/pawcoding/pocketbase-crm/core"
+	"github.com/pawcoding/pocketbase-crm/daos"
+	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pawcoding/pocketbase-crm/tests"
+	"github.com/pawcoding/pocketbase-crm/tools/hook"
+	"github.com/pawcoding/pocketbase-crm/tools/subscriptions"
 )
 
 func TestRealtimeConnect(t *testing.T) {

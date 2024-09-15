@@ -9,8 +9,8 @@ import (
 	"testing"
 
 	"github.com/labstack/echo/v5"
-	"github.com/pocketbase/pocketbase/tools/rest"
-	"github.com/pocketbase/pocketbase/tools/search"
+	"github.com/pawcoding/pocketbase-crm/tools/rest"
+	"github.com/pawcoding/pocketbase-crm/tools/search"
 )
 
 func TestSerialize(t *testing.T) {

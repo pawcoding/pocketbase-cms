@@ -13,8 +13,8 @@ import (
 	"testing"
 
 	"github.com/labstack/echo/v5"
-	"github.com/pocketbase/pocketbase/tests"
-	"github.com/pocketbase/pocketbase/tools/filesystem"
+	"github.com/pawcoding/pocketbase-crm/tests"
+	"github.com/pawcoding/pocketbase-crm/tools/filesystem"
 )
 
 func TestNewFileFromPath(t *testing.T) {

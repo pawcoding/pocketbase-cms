@@ -4,8 +4,8 @@ import (
 	"time"
 
 	"github.com/pocketbase/dbx"
-	"github.com/pocketbase/pocketbase/models"
-	"github.com/pocketbase/pocketbase/tools/types"
+	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pawcoding/pocketbase-crm/tools/types"
 )
 
 // LogQuery returns a new Log select query.

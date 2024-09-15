@@ -9,14 +9,14 @@ import (
 
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/dbx"
-	"github.com/pocketbase/pocketbase/core"
-	"github.com/pocketbase/pocketbase/daos"
-	"github.com/pocketbase/pocketbase/models"
-	"github.com/pocketbase/pocketbase/resolvers"
-	"github.com/pocketbase/pocketbase/tokens"
-	"github.com/pocketbase/pocketbase/tools/inflector"
-	"github.com/pocketbase/pocketbase/tools/rest"
-	"github.com/pocketbase/pocketbase/tools/search"
+	"github.com/pawcoding/pocketbase-crm/core"
+	"github.com/pawcoding/pocketbase-crm/daos"
+	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pawcoding/pocketbase-crm/resolvers"
+	"github.com/pawcoding/pocketbase-crm/tokens"
+	"github.com/pawcoding/pocketbase-crm/tools/inflector"
+	"github.com/pawcoding/pocketbase-crm/tools/rest"
+	"github.com/pawcoding/pocketbase-crm/tools/search"
 )
 
 const ContextRequestInfoKey = "requestInfo"

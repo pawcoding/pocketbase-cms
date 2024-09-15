@@ -7,12 +7,12 @@ import (
 
 	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/dbx"
-	"github.com/pocketbase/pocketbase/core"
-	"github.com/pocketbase/pocketbase/daos"
-	"github.com/pocketbase/pocketbase/forms"
-	"github.com/pocketbase/pocketbase/models"
-	"github.com/pocketbase/pocketbase/resolvers"
-	"github.com/pocketbase/pocketbase/tools/search"
+	"github.com/pawcoding/pocketbase-crm/core"
+	"github.com/pawcoding/pocketbase-crm/daos"
+	"github.com/pawcoding/pocketbase-crm/forms"
+	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pawcoding/pocketbase-crm/resolvers"
+	"github.com/pawcoding/pocketbase-crm/tools/search"
 )
 
 // bindRecordCrudApi registers the record crud api endpoints and

@@ -5,9 +5,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/pocketbase/pocketbase/forms"
-	"github.com/pocketbase/pocketbase/models"
-	"github.com/pocketbase/pocketbase/tests"
+	"github.com/pawcoding/pocketbase-crm/forms"
+	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pawcoding/pocketbase-crm/tests"
 )
 
 func TestCollectionsImportValidate(t *testing.T) {

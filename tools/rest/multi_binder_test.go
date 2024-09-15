@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/labstack/echo/v5"
-	"github.com/pocketbase/pocketbase/tools/rest"
+	"github.com/pawcoding/pocketbase-crm/tools/rest"
 )
 
 func TestMultiBinderBind(t *testing.T) {

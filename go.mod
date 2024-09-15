@@ -1,4 +1,4 @@
-module github.com/pocketbase/pocketbase
+module github.com/pawcoding/pocketbase-crm
 
 go 1.22
 

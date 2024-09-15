@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/pocketbase/pocketbase/apis"
-	"github.com/pocketbase/pocketbase/core"
+	"github.com/pawcoding/pocketbase-crm/apis"
+	"github.com/pawcoding/pocketbase-crm/core"
 	"github.com/spf13/cobra"
 )
 

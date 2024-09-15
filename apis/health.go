@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v5"
-	"github.com/pocketbase/pocketbase/core"
+	"github.com/pawcoding/pocketbase-crm/core"
 )
 
 // bindHealthApi registers the health api endpoint.

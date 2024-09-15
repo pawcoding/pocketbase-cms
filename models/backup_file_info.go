@@ -1,6 +1,6 @@
 package models
 
-import "github.com/pocketbase/pocketbase/tools/types"
+import "github.com/pawcoding/pocketbase-crm/tools/types"
 
 type BackupFileInfo struct {
 	Key      string         `json:"key"`

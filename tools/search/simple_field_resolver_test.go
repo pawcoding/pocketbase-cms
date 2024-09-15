@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/pocketbase/dbx"
-	"github.com/pocketbase/pocketbase/tools/search"
+	"github.com/pawcoding/pocketbase-crm/tools/search"
 )
 
 func TestSimpleFieldResolverUpdateQuery(t *testing.T) {

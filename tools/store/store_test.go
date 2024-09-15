@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/pocketbase/pocketbase/tools/store"
+	"github.com/pawcoding/pocketbase-crm/tools/store"
 )
 
 func TestNew(t *testing.T) {

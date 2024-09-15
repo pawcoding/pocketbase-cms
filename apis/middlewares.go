@@ -10,12 +10,12 @@ import (
 	"time"
 
 	"github.com/labstack/echo/v5"
-	"github.com/pocketbase/pocketbase/core"
-	"github.com/pocketbase/pocketbase/models"
-	"github.com/pocketbase/pocketbase/tokens"
-	"github.com/pocketbase/pocketbase/tools/list"
-	"github.com/pocketbase/pocketbase/tools/routine"
-	"github.com/pocketbase/pocketbase/tools/security"
+	"github.com/pawcoding/pocketbase-crm/core"
+	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pawcoding/pocketbase-crm/tokens"
+	"github.com/pawcoding/pocketbase-crm/tools/list"
+	"github.com/pawcoding/pocketbase-crm/tools/routine"
+	"github.com/pawcoding/pocketbase-crm/tools/security"
 	"github.com/spf13/cast"
 )
 

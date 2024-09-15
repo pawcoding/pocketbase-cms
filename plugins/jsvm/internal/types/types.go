@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pocketbase/pocketbase/core"
-	"github.com/pocketbase/pocketbase/plugins/jsvm"
-	"github.com/pocketbase/pocketbase/tools/list"
+	"github.com/pawcoding/pocketbase-crm/core"
+	"github.com/pawcoding/pocketbase-crm/plugins/jsvm"
+	"github.com/pawcoding/pocketbase-crm/tools/list"
 	"github.com/pocketbase/tygoja"
 )
 
@@ -1081,14 +1081,14 @@ func main() {
 			"github.com/labstack/echo/v5/middleware":            {"Gzip", "BodyLimit"},
 			"github.com/go-ozzo/ozzo-validation/v4":             {"Error"},
 			"github.com/pocketbase/dbx":                         {"*"},
-			"github.com/pocketbase/pocketbase/tools/security":   {"*"},
-			"github.com/pocketbase/pocketbase/tools/filesystem": {"*"},
-			"github.com/pocketbase/pocketbase/tools/template":   {"*"},
-			"github.com/pocketbase/pocketbase/tokens":           {"*"},
-			"github.com/pocketbase/pocketbase/mails":            {"*"},
-			"github.com/pocketbase/pocketbase/apis":             {"*"},
-			"github.com/pocketbase/pocketbase/forms":            {"*"},
-			"github.com/pocketbase/pocketbase":                  {"*"},
+			"github.com/pawcoding/pocketbase-crm/tools/security":   {"*"},
+			"github.com/pawcoding/pocketbase-crm/tools/filesystem": {"*"},
+			"github.com/pawcoding/pocketbase-crm/tools/template":   {"*"},
+			"github.com/pawcoding/pocketbase-crm/tokens":           {"*"},
+			"github.com/pawcoding/pocketbase-crm/mails":            {"*"},
+			"github.com/pawcoding/pocketbase-crm/apis":             {"*"},
+			"github.com/pawcoding/pocketbase-crm/forms":            {"*"},
+			"github.com/pawcoding/pocketbase-crm":                  {"*"},
 			"path/filepath":                                     {"*"},
 			"os":                                                {"*"},
 			"os/exec":                                           {"Command"},

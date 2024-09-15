@@ -6,7 +6,7 @@ import (
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
 	"github.com/pocketbase/dbx"
-	"github.com/pocketbase/pocketbase/daos"
+	"github.com/pawcoding/pocketbase-crm/daos"
 )
 
 // UniqueId checks whether the provided model id already exists.

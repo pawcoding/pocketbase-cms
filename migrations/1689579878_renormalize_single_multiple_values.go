@@ -5,7 +5,7 @@ import (
 )
 
 // Renormalizes old single and multiple values of MultiValuer fields (file, select, relation)
-// (see https://github.com/pocketbase/pocketbase/issues/2930).
+// (see https://github.com/pawcoding/pocketbase-crm/issues/2930).
 func init() {
 	AppMigrations.Register(func(db dbx.Builder) error {
 		return normalizeMultivaluerFields(db)
