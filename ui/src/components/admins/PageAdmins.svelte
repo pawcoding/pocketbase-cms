@@ -117,6 +117,13 @@
                         </div>
                     </SortHeader>
 
+                    <SortHeader class="col-type-text col-field-superAdmin" name="superAdmin" bind:sort>
+                        <div class="col-header-content">
+                            <i class={CommonHelper.getFieldTypeIcon("boolean")} />
+                            <span class="txt">Role</span>
+                        </div>
+                    </SortHeader>
+
                     <SortHeader class="col-type-date col-field-created" name="created" bind:sort>
                         <div class="col-header-content">
                             <i class={CommonHelper.getFieldTypeIcon("date")} />
@@ -170,6 +177,12 @@
                         <td class="col-type-email col-field-email">
                             <span class="txt txt-ellipsis" title={admin.email}>
                                 {admin.email}
+                            </span>
+                        </td>
+
+                        <td class="col-type-text col-field-superAdmin">
+                            <span class="txt txt-ellipsis" title={admin.superAdmin ? 'Admin' : 'Editor'}>
+                                {admin.superAdmin ? 'Admin' : 'Editor'}
                             </span>
                         </td>
 

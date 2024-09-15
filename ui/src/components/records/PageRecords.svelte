@@ -10,6 +10,7 @@
         changeActiveCollectionById,
     } from "@/stores/collections";
     import tooltip from "@/actions/tooltip";
+    import { admin } from "@/stores/admin";
     import { pageTitle, hideControls } from "@/stores/app";
     import PageWrapper from "@/components/base/PageWrapper.svelte";
     import Searchbar from "@/components/base/Searchbar.svelte";
@@ -188,14 +189,16 @@
             </div>
 
             <div class="btns-group">
-                <button
-                    type="button"
-                    class="btn btn-outline"
-                    on:click={() => collectionDocsPanel?.show($activeCollection)}
-                >
-                    <i class="ri-code-s-slash-line" />
-                    <span class="txt">API Preview</span>
-                </button>
+                {#if $admin?.superAdmin}
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        on:click={() => collectionDocsPanel?.show($activeCollection)}
+                    >
+                        <i class="ri-code-s-slash-line" />
+                        <span class="txt">API Preview</span>
+                    </button>
+                {/if}
 
                 {#if $activeCollection.type !== "view"}
                     <button type="button" class="btn btn-expanded" on:click={() => recordUpsertPanel?.show()}>

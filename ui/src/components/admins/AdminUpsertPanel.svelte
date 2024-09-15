@@ -6,17 +6,19 @@
     import { setErrors } from "@/stores/errors";
     import { confirm } from "@/stores/confirmation";
     import { addSuccessToast } from "@/stores/toasts";
+    import { admin } from "@/stores/admin";
     import Field from "@/components/base/Field.svelte";
     import Toggler from "@/components/base/Toggler.svelte";
     import ModelDateIcon from "@/components/base/ModelDateIcon.svelte";
     import OverlayPanel from "@/components/base/OverlayPanel.svelte";
     import SecretGeneratorButton from "@/components/base/SecretGeneratorButton.svelte";
+    import tooltip from "@/actions/tooltip";
 
     const dispatch = createEventDispatcher();
     const formId = "admin_" + CommonHelper.randomString(5);
 
     let panel;
-    let admin = {};
+    let user = {};
     let isSaving = false;
     let confirmClose = false; // prevent close recursion
     let avatar = 0;
@@ -24,11 +26,16 @@
     let password = "";
     let passwordConfirm = "";
     let changePasswordToggle = false;
+    let superAdmin = false;
 
-    $: isNew = !admin?.id;
+    $: isNew = !user?.id;
 
     $: hasChanges =
-        (isNew && email != "") || changePasswordToggle || email !== admin.email || avatar !== admin.avatar;
+        (isNew && email != "") ||
+        changePasswordToggle ||
+        email !== user.email ||
+        avatar !== user.avatar ||
+        superAdmin !== user.superAdmin;
 
     export function show(model) {
         load(model);
@@ -43,14 +50,15 @@
     }
 
     function load(model) {
-        admin = structuredClone(model || {});
+        user = structuredClone(model || {});
         reset(); // reset form
     }
 
     function reset() {
         changePasswordToggle = false;
-        email = admin?.email || "";
-        avatar = admin?.avatar || 0;
+        superAdmin = user?.superAdmin || false;
+        email = user?.email || "";
+        avatar = user?.avatar || 0;
         password = "";
         passwordConfirm = "";
         setErrors({}); // reset errors
@@ -63,7 +71,7 @@
 
         isSaving = true;
 
-        const data = { email, avatar };
+        const data = { email, avatar, superAdmin };
         if (isNew || changePasswordToggle) {
             data["password"] = password;
             data["passwordConfirm"] = passwordConfirm;
@@ -73,7 +81,7 @@
         if (isNew) {
             request = ApiClient.admins.create(data);
         } else {
-            request = ApiClient.admins.update(admin.id, data);
+            request = ApiClient.admins.update(user.id, data);
         }
 
         request
@@ -97,18 +105,18 @@
     }
 
     function deleteConfirm() {
-        if (!admin?.id) {
+        if (!user?.id) {
             return; // nothing to delete
         }
 
         confirm(`Do you really want to delete the selected admin?`, () => {
             return ApiClient.admins
-                .delete(admin.id)
+                .delete(user.id)
                 .then(() => {
                     confirmClose = false;
                     hide();
                     addSuccessToast("Successfully deleted admin.");
-                    dispatch("delete", admin);
+                    dispatch("delete", user);
                 })
                 .catch((err) => {
                     ApiClient.error(err);
@@ -148,9 +156,9 @@
                     <span class="txt">id</span>
                 </label>
                 <div class="form-field-addon">
-                    <ModelDateIcon model={admin} />
+                    <ModelDateIcon model={user} />
                 </div>
-                <input type="text" id={uniqueId} value={admin.id} readonly />
+                <input type="text" id={uniqueId} value={user.id} readonly />
             </Field>
         {/if}
 
@@ -171,6 +179,22 @@
                 {/each}
             </div>
         </div>
+
+        {#if $admin?.superAdmin && $admin?.id !== user.id}
+            <Field class="form-field form-field-toggle" let:uniqueId>
+                <input type="checkbox" id={uniqueId} bind:checked={superAdmin} />
+                <label for={uniqueId}>
+                    Administrator
+                    <i
+                        class="ri-information-line link-hint"
+                        use:tooltip={{
+                            text: `Administrators have full access to the system and can do everything. Editors have limited access and can only manage the content.`,
+                            position: "bottom",
+                        }}
+                    />
+                </label>
+            </Field>
+        {/if}
 
         <Field class="form-field required" name="email" let:uniqueId>
             <label for={uniqueId}>
@@ -229,7 +253,7 @@
     </form>
 
     <svelte:fragment slot="footer">
-        {#if !isNew}
+        {#if !isNew && $admin?.id !== user.id}
             <div
                 tabindex="0"
                 role="button"

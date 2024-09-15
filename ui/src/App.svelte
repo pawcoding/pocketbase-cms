@@ -15,9 +15,11 @@
     import { setErrors } from "@/stores/errors";
     import { resetConfirmation } from "@/stores/confirmation";
     import TinyMCE from "@/components/base/TinyMCE.svelte";
+    import AdminUpsertPanel from "@/components/admins/AdminUpsertPanel.svelte";
 
     let oldLocation = undefined;
 
+    let adminUpsertPanel;
     let showAppSidebar = false;
 
     let isTinyMCEPreloaded = false;
@@ -55,7 +57,7 @@
                 $cancelKey: "initialAppSettings",
             });
             $appName = settings?.meta?.appName || "";
-            $hideControls = !!settings?.meta?.hideControls;
+            $hideControls = !!settings?.meta?.hideControls || !$admin.superAdmin;
         } catch (err) {
             if (!err?.isAbort) {
                 console.warn("Failed to load app settings.", err);
@@ -95,26 +97,29 @@
                 >
                     <i class="ri-database-2-line" />
                 </a>
-                <a
-                    href="/logs"
-                    class="menu-item"
-                    aria-label="Logs"
-                    use:link
-                    use:active={{ path: "/logs/?.*", className: "current-route" }}
-                    use:tooltip={{ text: "Logs", position: "right" }}
-                >
-                    <i class="ri-line-chart-line" />
-                </a>
-                <a
-                    href="/settings"
-                    class="menu-item"
-                    aria-label="Settings"
-                    use:link
-                    use:active={{ path: "/settings/?.*", className: "current-route" }}
-                    use:tooltip={{ text: "Settings", position: "right" }}
-                >
-                    <i class="ri-tools-line" />
-                </a>
+
+                {#if $admin.superAdmin}
+                    <a
+                        href="/logs"
+                        class="menu-item"
+                        aria-label="Logs"
+                        use:link
+                        use:active={{ path: "/logs/?.*", className: "current-route" }}
+                        use:tooltip={{ text: "Logs", position: "right" }}
+                    >
+                        <i class="ri-line-chart-line" />
+                    </a>
+                    <a
+                        href="/settings"
+                        class="menu-item"
+                        aria-label="Settings"
+                        use:link
+                        use:active={{ path: "/settings/?.*", className: "current-route" }}
+                        use:tooltip={{ text: "Settings", position: "right" }}
+                    >
+                        <i class="ri-tools-line" />
+                    </a>
+                {/if}
             </nav>
 
             <div
@@ -129,10 +134,16 @@
                     aria-hidden="true"
                 />
                 <Toggler class="dropdown dropdown-nowrap dropdown-upside dropdown-left">
-                    <a href="/settings/admins" class="dropdown-item closable" role="menuitem" use:link>
-                        <i class="ri-shield-user-line" aria-hidden="true" />
-                        <span class="txt">Manage admins</span>
-                    </a>
+                    <button
+                        type="button"
+                        class="dropdown-item closable"
+                        role="menuitem"
+                        on:click={() => adminUpsertPanel?.show($admin)}
+                    >
+                        <i class="ri-user-line" aria-hidden="true" />
+                        <span class="txt">Profile</span>
+                    </button>
+
                     <hr />
                     <button type="button" class="dropdown-item closable" role="menuitem" on:click={logout}>
                         <i class="ri-logout-circle-line" aria-hidden="true" />
@@ -151,6 +162,8 @@
 </div>
 
 <Confirmation />
+
+<AdminUpsertPanel bind:this={adminUpsertPanel} />
 
 {#if showAppSidebar && !isTinyMCEPreloaded}
     <div class="tinymce-preloader hidden">
