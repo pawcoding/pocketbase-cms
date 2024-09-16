@@ -71,11 +71,11 @@ func Register(app core.App, rootCmd *cobra.Command, config Config) error {
 	}
 
 	if p.config.Owner == "" {
-		p.config.Owner = "pocketbase"
+		p.config.Owner = "pawcoding"
 	}
 
 	if p.config.Repo == "" {
-		p.config.Repo = "pocketbase"
+		p.config.Repo = "pocketbase-cms"
 	}
 
 	if p.config.ArchiveExecutable == "" {

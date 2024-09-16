@@ -614,6 +614,7 @@ a.thumb:not(.thumb-active) {
     position: relative;
     vertical-align: top;
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
     font-size: 23px;

@@ -71,7 +71,7 @@
 </script>
 
 <svelte:head>
-    <title>{CommonHelper.joinNonEmpty([$pageTitle, $appName, "PocketBase"], " - ")}</title>
+    <title>{CommonHelper.joinNonEmpty([$pageTitle, $appName, "PocketBase CMS"], " - ")}</title>
 </svelte:head>
 
 <div class="app-layout">
@@ -84,6 +84,10 @@
                     width="40"
                     height="40"
                 />
+
+                <strong>
+                    CMS
+                </strong>
             </a>
 
             <nav class="main-menu">

@@ -18,6 +18,10 @@
             <span class="txt">Docs</span>
         </a>
         <span class="delimiter">|</span>
+        <a href={import.meta.env.CMS_RELEASES} target="_blank" rel="noopener noreferrer" title="Releases">
+            <span class="txt">PocketBase CMS {import.meta.env.CMS_VERSION}</span>
+        </a>
+        based on
         <a href={import.meta.env.PB_RELEASES} target="_blank" rel="noopener noreferrer" title="Releases">
             <span class="txt">PocketBase {import.meta.env.PB_VERSION}</span>
         </a>

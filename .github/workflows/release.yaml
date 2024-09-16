@@ -1,7 +1,6 @@
-name: basebuild
+name: release
 
 on:
-  pull_request:
   push:
 
 jobs:
@@ -36,10 +35,10 @@ jobs:
       # - name: Generate jsvm types
       #   run: go run ./plugins/jsvm/internal/types/types.go
 
-      # The prebuilt golangci-lint doesn't support go 1.18+ yet
-      # https://github.com/golangci/golangci-lint/issues/2649
       # - name: Run linter
-      #   uses: golangci/golangci-lint-action@v3
+      #  uses: golangci/golangci-lint-action@v6
+      #  with:
+      #    version: v1.60
 
       - name: Run tests
         run: go test ./...
