@@ -3,10 +3,10 @@ package migrations
 import (
 	"fmt"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/models/schema"
+	"github.com/pocketbase/dbx"
 )
 
 // Normalizes old single and multiple values of MultiValuer fields (file, select, relation).

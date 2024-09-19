@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/tools/list"
+	"github.com/pocketbase/dbx"
 	_ "modernc.org/sqlite"
 )
 

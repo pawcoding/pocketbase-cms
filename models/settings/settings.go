@@ -336,7 +336,7 @@ func (s *Settings) RedactClone() (*Settings, error) {
 func (s *Settings) PublicClone() (*Settings, error) {
 	meta := MetaConfig{
 		AppName: s.Meta.AppName,
-		AppUrl: s.Meta.AppUrl,
+		AppUrl:  s.Meta.AppUrl,
 	}
 	settings := &Settings{
 		Meta: meta,

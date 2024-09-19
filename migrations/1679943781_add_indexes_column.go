@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/tools/dbutils"
 	"github.com/pawcoding/pocketbase-crm/tools/list"
+	"github.com/pocketbase/dbx"
 )
 
 // Adds _collections indexes column (if not already).

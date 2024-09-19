@@ -3,9 +3,9 @@ package daos
 import (
 	"time"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/tools/types"
+	"github.com/pocketbase/dbx"
 )
 
 // LogQuery returns a new Log select query.

@@ -3,8 +3,8 @@ package daos
 import (
 	"errors"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pocketbase/dbx"
 )
 
 // ExternalAuthQuery returns a new ExternalAuth select query.

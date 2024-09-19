@@ -20,7 +20,7 @@ type Admin struct {
 	TokenKey        string         `db:"tokenKey" json:"-"`
 	PasswordHash    string         `db:"passwordHash" json:"-"`
 	LastResetSentAt types.DateTime `db:"lastResetSentAt" json:"-"`
-	SuperAdmin      bool		   `db:"superAdmin" json:"superAdmin"`
+	SuperAdmin      bool           `db:"superAdmin" json:"superAdmin"`
 }
 
 // TableName returns the Admin model SQL table name.

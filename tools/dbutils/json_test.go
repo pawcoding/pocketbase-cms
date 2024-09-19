@@ -62,5 +62,4 @@ func TestJsonExtract(t *testing.T) {
 			}
 		})
 	}
-
 }

@@ -32,10 +32,10 @@ jobs:
       # - name: Generate jsvm types
       #   run: go run ./plugins/jsvm/internal/types/types.go
 
-      # - name: Run linter
-      #  uses: golangci/golangci-lint-action@v6
-      #  with:
-      #    version: v1.60
+      - name: Run linter
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.61
 
       - name: Run tests
         run: go test ./...

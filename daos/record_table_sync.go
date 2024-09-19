@@ -6,11 +6,11 @@ import (
 	"strings"
 
 	validation "github.com/go-ozzo/ozzo-validation/v4"
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/models/schema"
 	"github.com/pawcoding/pocketbase-crm/tools/dbutils"
 	"github.com/pawcoding/pocketbase-crm/tools/security"
+	"github.com/pocketbase/dbx"
 )
 
 // SyncRecordTableSchema compares the two provided collections

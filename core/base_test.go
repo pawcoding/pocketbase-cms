@@ -10,7 +10,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/migrations"
 	"github.com/pawcoding/pocketbase-crm/migrations/logs"
@@ -20,6 +19,7 @@ import (
 	"github.com/pawcoding/pocketbase-crm/tools/mailer"
 	"github.com/pawcoding/pocketbase-crm/tools/migrate"
 	"github.com/pawcoding/pocketbase-crm/tools/types"
+	"github.com/pocketbase/dbx"
 )
 
 func TestNewBaseApp(t *testing.T) {

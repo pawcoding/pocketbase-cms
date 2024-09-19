@@ -4,10 +4,10 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v5"
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/core"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/tools/search"
+	"github.com/pocketbase/dbx"
 )
 
 // bindLogsApi registers the request logs api endpoints.

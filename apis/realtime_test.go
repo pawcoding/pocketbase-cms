@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/labstack/echo/v5"
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/apis"
 	"github.com/pawcoding/pocketbase-crm/core"
 	"github.com/pawcoding/pocketbase-crm/daos"
@@ -16,6 +15,7 @@ import (
 	"github.com/pawcoding/pocketbase-crm/tests"
 	"github.com/pawcoding/pocketbase-crm/tools/hook"
 	"github.com/pawcoding/pocketbase-crm/tools/subscriptions"
+	"github.com/pocketbase/dbx"
 )
 
 func TestRealtimeConnect(t *testing.T) {

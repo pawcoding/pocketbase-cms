@@ -8,12 +8,12 @@ import (
 	"time"
 
 	"github.com/labstack/echo/v5"
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/core"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/tests"
 	"github.com/pawcoding/pocketbase-crm/tools/types"
+	"github.com/pocketbase/dbx"
 )
 
 func TestAdminAuthWithPassword(t *testing.T) {

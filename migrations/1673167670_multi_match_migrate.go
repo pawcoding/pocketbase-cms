@@ -4,10 +4,10 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/models/schema"
+	"github.com/pocketbase/dbx"
 )
 
 // This migration replaces for backward compatibility the default operators

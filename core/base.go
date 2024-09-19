@@ -14,7 +14,6 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/models/settings"
@@ -27,6 +26,7 @@ import (
 	"github.com/pawcoding/pocketbase-crm/tools/store"
 	"github.com/pawcoding/pocketbase-crm/tools/subscriptions"
 	"github.com/pawcoding/pocketbase-crm/tools/types"
+	"github.com/pocketbase/dbx"
 	"github.com/spf13/cast"
 )
 

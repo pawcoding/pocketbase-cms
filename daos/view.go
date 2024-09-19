@@ -7,7 +7,6 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/models/schema"
 	"github.com/pawcoding/pocketbase-crm/tools/inflector"
@@ -15,6 +14,7 @@ import (
 	"github.com/pawcoding/pocketbase-crm/tools/security"
 	"github.com/pawcoding/pocketbase-crm/tools/tokenizer"
 	"github.com/pawcoding/pocketbase-crm/tools/types"
+	"github.com/pocketbase/dbx"
 )
 
 // DeleteView drops the specified view name.

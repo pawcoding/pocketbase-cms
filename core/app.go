@@ -7,7 +7,6 @@ import (
 	"context"
 	"log/slog"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/models/settings"
 	"github.com/pawcoding/pocketbase-crm/tools/filesystem"
@@ -15,6 +14,7 @@ import (
 	"github.com/pawcoding/pocketbase-crm/tools/mailer"
 	"github.com/pawcoding/pocketbase-crm/tools/store"
 	"github.com/pawcoding/pocketbase-crm/tools/subscriptions"
+	"github.com/pocketbase/dbx"
 )
 
 // App defines the main PocketBase app interface.

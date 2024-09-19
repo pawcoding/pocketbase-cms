@@ -3,8 +3,8 @@ package search_test
 import (
 	"testing"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/tools/search"
+	"github.com/pocketbase/dbx"
 )
 
 func TestSimpleFieldResolverUpdateQuery(t *testing.T) {

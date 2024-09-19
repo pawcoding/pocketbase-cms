@@ -8,11 +8,11 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/core"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/tools/migrate"
+	"github.com/pocketbase/dbx"
 )
 
 const collectionsStoreKey = "migratecmd_collections"

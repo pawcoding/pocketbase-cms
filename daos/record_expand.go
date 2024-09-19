@@ -7,13 +7,13 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/models/schema"
 	"github.com/pawcoding/pocketbase-crm/tools/dbutils"
 	"github.com/pawcoding/pocketbase-crm/tools/list"
 	"github.com/pawcoding/pocketbase-crm/tools/security"
 	"github.com/pawcoding/pocketbase-crm/tools/types"
+	"github.com/pocketbase/dbx"
 )
 
 // MaxExpandDepth specifies the max allowed nested expand depth path.

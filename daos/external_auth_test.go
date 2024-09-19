@@ -3,9 +3,9 @@ package daos_test
 import (
 	"testing"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/tests"
+	"github.com/pocketbase/dbx"
 )
 
 func TestExternalAuthQuery(t *testing.T) {

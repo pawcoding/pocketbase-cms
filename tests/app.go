@@ -9,12 +9,12 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/core"
 	"github.com/pawcoding/pocketbase-crm/migrations"
 	"github.com/pawcoding/pocketbase-crm/migrations/logs"
 	"github.com/pawcoding/pocketbase-crm/tools/mailer"
 	"github.com/pawcoding/pocketbase-crm/tools/migrate"
+	"github.com/pocketbase/dbx"
 )
 
 // TestApp is a wrapper app instance used for testing.

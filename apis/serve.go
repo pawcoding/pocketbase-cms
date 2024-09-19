@@ -14,12 +14,12 @@ import (
 	"github.com/fatih/color"
 	"github.com/labstack/echo/v5"
 	"github.com/labstack/echo/v5/middleware"
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/core"
 	"github.com/pawcoding/pocketbase-crm/migrations"
 	"github.com/pawcoding/pocketbase-crm/migrations/logs"
 	"github.com/pawcoding/pocketbase-crm/tools/list"
 	"github.com/pawcoding/pocketbase-crm/tools/migrate"
+	"github.com/pocketbase/dbx"
 	"golang.org/x/crypto/acme"
 	"golang.org/x/crypto/acme/autocert"
 )

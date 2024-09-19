@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/models/schema"
 	"github.com/pawcoding/pocketbase-crm/tools/list"
+	"github.com/pocketbase/dbx"
 )
 
 // CollectionQuery returns a new Collection select query.

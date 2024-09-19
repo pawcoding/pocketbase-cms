@@ -5,13 +5,13 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/models/schema"
 	"github.com/pawcoding/pocketbase-crm/models/settings"
 	"github.com/pawcoding/pocketbase-crm/tools/migrate"
 	"github.com/pawcoding/pocketbase-crm/tools/types"
+	"github.com/pocketbase/dbx"
 )
 
 var AppMigrations migrate.MigrationsList

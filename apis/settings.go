@@ -43,7 +43,6 @@ func (api *settingsApi) list(c echo.Context) error {
 		settings, err = rawSettings.PublicClone()
 	}
 
-
 	if err != nil {
 		return NewBadRequestError("", err)
 	}

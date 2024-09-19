@@ -3,8 +3,8 @@ package daos
 import (
 	"fmt"
 
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/models"
+	"github.com/pocketbase/dbx"
 )
 
 // HasTable checks if a table (or view) with the provided name exists (case insensitive).

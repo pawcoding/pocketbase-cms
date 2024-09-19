@@ -1,10 +1,10 @@
 package migrations
 
 import (
-	"github.com/pocketbase/dbx"
 	"github.com/pawcoding/pocketbase-crm/daos"
 	"github.com/pawcoding/pocketbase-crm/models"
 	"github.com/pawcoding/pocketbase-crm/models/schema"
+	"github.com/pocketbase/dbx"
 )
 
 // Copy the now deprecated RelationOptions.DisplayFields values from
