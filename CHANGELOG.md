@@ -1,3 +1,7 @@
+## v0.1.1
+
+- Update pocketbase to v0.22.21
+
 ## v0.1.0
 
 - Add difference between "Superadmin" and "Editor" roles
