@@ -1,5 +1,6 @@
 ## v0.1.1
 
+- Remove built frontend from the repository (it's now built directly in the GitHub Actions)
 - Update pocketbase to v0.22.21
 
 ## v0.1.0

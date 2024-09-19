@@ -5,3 +5,6 @@
 # exclude local env files
 .env.local
 .env.*.local
+
+# build output
+/dist/
